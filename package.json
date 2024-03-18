@@ -1,0 +1,35 @@
+{
+  "name": "enhance-arc-template",
+  "version": "1.0.0",
+  "description": "",
+  "author": "tbeseda",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tbeseda/enhance-template-min.git"
+  },
+  "bugs": {
+    "url": "https://github.com/tbeseda/enhance-template-min/issues"
+  },
+  "homepage": "https://github.com/tbeseda/enhance-template-min",
+  "scripts": {
+    "deploy.both": "npm run deploy.staging && npm run deploy.production",
+    "deploy.production": "arc deploy --production",
+    "deploy.staging": "arc deploy",
+    "biome": "biome check --apply ./",
+    "start": "arc sandbox",
+    "test": "biome ci ./ && node --test test/",
+    "check-updates": "npx npm-check-updates"
+  },
+  "devDependencies": {
+    "@architect/architect": "^11.0.5",
+    "@architect/plugin-lambda-invoker": "^1.2.0",
+    "@biomejs/biome": "^1.6.1",
+    "@enhance/arc-plugin-enhance": "^10.0.0",
+    "@enhance/types": "^0.7.0"
+  },
+  "keywords": ["enhance"],
+  "dependencies": {
+    "@architect/functions": "^8.0.4"
+  }
+}
